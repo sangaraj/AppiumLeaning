@@ -43,11 +43,18 @@ public class HandlingWebView extends CreateDriver {
             System.out.println(contexName);
         }
 
+        //switching to web view
         driver.context("WEBVIEW_com.androidsample.generalstore");
         //afte switching to webview, it only worked with xpath on using other it dint worked
         driver.findElement(By.xpath("//*[@name='q']")).sendKeys("Hello");
+
+        //send key to hit enter
         driver.findElementByXPath("//*[@name='q']").sendKeys(Keys.ENTER);
+
+        //send kye to hit back button
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
+
+        //switch back to native app
         driver.context("NATIVE_APP");
 
     }
